@@ -1,8 +1,6 @@
 package de.deepamehta.plugins.eduzenmigrator;
 
-import de.deepamehta.plugins.eduzenmigrator.migrations.M1SetupACLEntries;
-import de.deepamehta.plugins.eduzenmigrator.migrations.M2SetAssocValues;
-import de.deepamehta.plugins.eduzenmigrator.migrations.M3SetAssocInstValues;
+import de.deepamehta.plugins.eduzenmigrator.migrations.*;
 
 import de.deepamehta.core.osgi.PluginActivator;
 import de.deepamehta.core.service.event.AllPluginsActiveListener;
@@ -31,6 +29,7 @@ public class EduzenMigratorPlugin extends PluginActivator implements AllPluginsA
     public void allPluginsActive() {
         // new M1SetupACLEntries(dms).run();
         // new M2SetAssocValues(dms).run();
-        new M3SetAssocInstValues(dms).run();
+        // new M3SetAssocInstValues(dms).run();
+        new M4NewACLStorage(dms).run();
     }
 }
